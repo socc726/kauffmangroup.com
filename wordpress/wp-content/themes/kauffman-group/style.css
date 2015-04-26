@@ -568,14 +568,30 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-/* line 3, public/sass/navigation/_menus.sass */
-.navbar .navbar-header .navbar-brand {
+/* line 1, public/sass/navigation/_menus.sass */
+.navbar.navbar-inverse {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+/* line 5, public/sass/navigation/_menus.sass */
+.navbar.navbar-inverse .navbar-header .navbar-brand {
   display: table;
   padding: 0 0 0 10%;
 }
-/* line 6, public/sass/navigation/_menus.sass */
-.navbar .navbar-header .navbar-brand img {
+/* line 8, public/sass/navigation/_menus.sass */
+.navbar.navbar-inverse .navbar-header .navbar-brand img {
   width: 50%;
+}
+/* line 12, public/sass/navigation/_menus.sass */
+.navbar.navbar-inverse .navbar-nav li.current-menu-item a {
+  background-image: -webkit-linear-gradient(top, #080808 0%, #0f0f0f 100%);
+  background-image: -o-linear-gradient(top, #080808 0%, #0f0f0f 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#080808), to(#0f0f0f));
+  background-image: linear-gradient(to bottom, #080808 0%, #0f0f0f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff080808', endColorstr='#ff0f0f0f', GradientType=0);
+  background-repeat: repeat-x;
+  -webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.25);
 }
 
 /*--------------------------------------------------------------
@@ -724,6 +740,41 @@ a:hover, a:active {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+/* line 2, public/sass/site/primary/_slider.sass */
+.carousel .carousel-indicators {
+  display: none;
+}
+/* line 4, public/sass/site/primary/_slider.sass */
+.carousel .carousel-caption {
+  background: black;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: left;
+  padding: 40px 60px 60px 60px;
+}
+/* line 12, public/sass/site/primary/_slider.sass */
+.carousel .carousel-caption h4 {
+  font-size: 38px;
+  text-transform: uppercase;
+  color: #fff;
+  padding-bottom: 15px;
+}
+/* line 17, public/sass/site/primary/_slider.sass */
+.carousel .carousel-caption p {
+  font-size: 18px;
+  line-height: 30px;
+}
+/* line 20, public/sass/site/primary/_slider.sass */
+.carousel .carousel-control .icon-prev, .carousel .carousel-control .glyphicon-chevron-left {
+  left: 40%;
+}
+/* line 22, public/sass/site/primary/_slider.sass */
+.carousel .carousel-control .icon-prev, .carousel .carousel-control .glyphicon-chevron-right {
+  right: 40%;
 }
 
 /*--------------------------------------------------------------

@@ -77,6 +77,76 @@ function kauffmansetup() {
 }
 endif; // kauffmansetup
 add_action( 'after_setup_theme', 'kauffmansetup' );
+/**
+ * Register Custom Posts
+ *
+ * @link http://codex.wordpress.org/Function_Reference/Post_Types
+ */
+
+/*
+* Creating a function to create our CPT
+*/
+
+function custom_project() {
+
+// Set UI labels for Custom Post Type
+	$labels = array(
+		'name'                => _x( 'Projects', 'Post Type General Name', 'twentythirteen' ),
+		'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'twentythirteen' ),
+		'menu_name'           => __( 'Projects', 'twentythirteen' ),
+		'parent_item_colon'   => __( 'Parent Movie', 'twentythirteen' ),
+		'all_items'           => __( 'All Movies', 'twentythirteen' ),
+		'view_item'           => __( 'View Movie', 'twentythirteen' ),
+		'add_new_item'        => __( 'Add New Movie', 'twentythirteen' ),
+		'add_new'             => __( 'Add New', 'twentythirteen' ),
+		'edit_item'           => __( 'Edit Movie', 'twentythirteen' ),
+		'update_item'         => __( 'Update Movie', 'twentythirteen' ),
+		'search_items'        => __( 'Search Movie', 'twentythirteen' ),
+		'not_found'           => __( 'Not Found', 'twentythirteen' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'twentythirteen' ),
+	);
+	
+// Set other options for Custom Post Type
+	
+	$args = array(
+		'label'               => __( 'Projects', 'Project' ),
+		'description'         => __( 'Movie news and reviews', 'twentythirteen' ),
+		'labels'              => $labels,
+		// Features this CPT supports in Post Editor
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		// You can associate this CPT with a taxonomy or custom taxonomy. 
+		'taxonomies'          => array( 'genres' ),
+		/* A hierarchical CPT is like Pages and can have
+		* Parent and child items. A non-hierarchical CPT
+		* is like Posts.
+		*/	
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'featured_image'      => true,
+		'public' => true, 'has_archive' => true 
+	);
+	
+	// Registering your Custom Post Type
+	register_post_type( 'projects', $args);
+
+}
+
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not 
+* unnecessarily executed. 
+*/
+
+add_action( 'init', 'custom_project', 0 );
 
 /**
  * Register widget area.
@@ -103,10 +173,11 @@ function kauffmanscripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/public/styles/bootstrap/bootstrap.css', array(), '0.0.1','all' );
 	wp_enqueue_style( 'bootstrap-theme', get_template_directory_uri() . '/public/styles/bootstrap/bootstrap-theme.css', array(), '0.0.1','all' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/public/styles/font-awesome.min.css', array(), '0.0.1','all' );
+	wp_enqueue_style( 'tabulous', get_template_directory_uri() . '/public/styles/tabulous.css', array(), '0.0.1','all' );
 	wp_enqueue_style( 'kauffman-style', get_stylesheet_uri() );
 	
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/public/js/jquery-1.11.2.min.js', array(), '20120206', true );
-
+	wp_enqueue_script( 'kauffman-tabulous', get_template_directory_uri() . '/public/js/tabulous.js', array(), '20120206', true );
 	wp_enqueue_script( 'kauffman-navigation', get_template_directory_uri() . '/public/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'kauffman-boostrap', get_template_directory_uri() . '/public/js/bootstrap.js', array(), '20120206', true );
 	wp_enqueue_script( 'kauffman-skip-link-focus-fix', get_template_directory_uri() . '/public/js/skip-link-focus-fix.js', array(), '20130115', true );

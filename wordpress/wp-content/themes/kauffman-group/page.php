@@ -11,11 +11,13 @@
  */
 
 get_header(); ?>
+      <?php echo do_shortcode('[image-carousel interval="0" category="homepage" twbs="3" ]'); ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
+
+
       <div class="container">
 			<?php while ( have_posts() ) : the_post(); ?>
-
 				<?php get_template_part( 'content', 'page' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
@@ -41,20 +43,33 @@ get_header(); ?>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
       </div>
+      <hr>      
+  <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1" title="">Tab 1</a></li>
+            <li><a href="#tabs-2" title="">Tab 2</a></li>
+            <li><a href="#tabs-3" title="">Tab 3</a></li>
+        </ul>
+        <div id="tabs_container">
+            <div id="tabs-1">
+                <p>hello</p>
+            </div>
+            <div id="tabs-2">
+                   <!--tab content-->
+                   <p>whats up</p>
+            </div>
+            <div id="tabs-3">
+                    <!--tab content-->
+                    <p>zip</p>
+            </div>
+        </div><!--End tabs container--> 
+  </div><!--End tabs-->
+</div>
 
-      <hr>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
-<div class="panel panel-success">
-<div class="panel-heading">
-	<h3>Font Awesome</h3>
-</div>
- <div class="panel-body">
-    <i class="fa fa-camera-retro fa-lg"></i> fa-lg
-<i class="fa fa-camera-retro fa-2x"></i> fa-2x
-<i class="fa fa-camera-retro fa-3x"></i> fa-3x
-<i class="fa fa-camera-retro fa-4x"></i> fa-4x
-<i class="fa fa-camera-retro fa-5x"></i> fa-5x
-  </div>
-  <div class="panel-footer">Panel footer</div>
-</div>
+
+  <script>
+    jQuery('#tabs').tabulous({
+      effect: 'scale'
+    });</script>
