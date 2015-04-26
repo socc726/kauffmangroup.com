@@ -11,29 +11,25 @@ $args = array( 'post_type' => 'projects', 'posts_per_page' => 10 );
 $the_query = new WP_Query( $args );
 
 get_header(); ?>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
+      <div class="container">
+<div class="row">
 		<?php if ( $the_query->have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
+			
 			<?php /* Start the Loop */ ?>
 			<?php while ( $the_query->have_posts() ) : $the_query->the_post();  ?>
-
+				
 				<?php
 					/* Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+					get_template_part( 'content', 'project' );
+				?>		
+
 
 			<?php endwhile; ?>
 
@@ -44,8 +40,9 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
-
-		</main><!-- #main -->
+			
+				</div>
+		</div><!-- #main -->
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>

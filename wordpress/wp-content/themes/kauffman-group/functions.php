@@ -86,7 +86,7 @@ add_action( 'after_setup_theme', 'kauffmansetup' );
 /*
 * Creating a function to create our CPT
 */
-
+add_theme_support('post-thumbnails');
 function custom_project() {
 
 // Set UI labels for Custom Post Type
@@ -132,8 +132,8 @@ function custom_project() {
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'capability_type'     => 'page',
-		'featured_image'      => true,
-		'public' => true, 'has_archive' => true 
+		'public' 			  => true,
+		'has_archive'         => true, 
 	);
 	
 	// Registering your Custom Post Type

@@ -1,4 +1,11 @@
 <?php
+
+ if( class_exists('Dynamic_Featured_Image') ) {
+     global $dynamic_featured_image;
+     $featured_images = $dynamic_featured_image->get_featured_images( the_id() );
+     echo $featured_images;
+    //You can now loop through the image to display them as required
+ }
 get_header(); ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
