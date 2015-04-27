@@ -19,12 +19,6 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'kauffman' ); ?></a>
-
-	<header id="masthead" class="site-header" role="banner">
-
-
-	</header><!-- #masthead -->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -43,7 +37,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-		<?php wp_nav_menu( array( 'theme_location' => 'primary','container' => false, 'menu_id' => 'primary-menu', 'items_wrap' => '<ul id="%1$s" class="nav navbar-nav pull-right">%3$s</ul>', ) ); ?>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary','container' => false, 'menu_id' => 'primary-menu', 'items_wrap' => '<ul id="%1$s" class="nav navbar-nav">%3$s</ul>', ) ); ?>
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

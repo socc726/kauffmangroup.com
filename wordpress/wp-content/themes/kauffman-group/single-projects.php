@@ -54,12 +54,13 @@ get_header(); while ( have_posts() ) : the_post(); ?>
 									$featured_images = $dynamic_featured_image->get_all_featured_images( get_the_ID());
 
 									foreach($featured_images as $value) :?>
-
 										<?php if($count == 0) { ?> 
 											<div class="item active"><?php } else { ?><div class="item"><?php } ?>
 												<img src="<?php echo $value['full']; ?>" alt="">
 												<div class="carousel-caption">
-													here
+													<h3><?php echo $dynamic_featured_image->get_image_title( $value['full']);  ?></h3>
+													<span><?php echo $dynamic_featured_image->get_image_caption( $value['full']);  ?></span>
+													<p><?php echo $dynamic_featured_image->get_image_description( $value['full']);  ?></p>	
 												</div>
 											</div>
 
@@ -91,7 +92,7 @@ get_header(); while ( have_posts() ) : the_post(); ?>
 			</div>
 
 		</div>
-								<?php if( class_exists('Dynamic_Featured_Image') ) {
+						<?php if( class_exists('Dynamic_Featured_Image') ) {
 
 							global $dynamic_featured_image;
 
@@ -113,10 +114,9 @@ get_header(); while ( have_posts() ) : the_post(); ?>
 									<?php } 
 									?>
 								</ol>
+
 								<!-- Wrapper for slides -->
 								<div class="carousel-inner" role="listbox">
-
-		
 
 										<?php 
 
@@ -126,14 +126,13 @@ get_header(); while ( have_posts() ) : the_post(); ?>
 												<div class="item active"><?php } else { ?><div class="item"><?php } ?>
 													<img src="<?php echo $value['full']; ?>" alt="">
 													<div class="carousel-caption">
-														here
+													<h3><?php echo $dynamic_featured_image->get_image_title( $value['full']);  ?></h3>
+													<span><?php echo $dynamic_featured_image->get_image_caption( $value['full']);  ?></span>
+													<p><?php echo $dynamic_featured_image->get_image_description( $value['full']);  ?></p>	
 													</div>
 												</div>
 
 										<?php $count++; endforeach; ?>
-
-									
-
 								</div>
 
 								<!-- Controls -->

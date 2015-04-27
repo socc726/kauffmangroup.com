@@ -564,17 +564,20 @@ a:hover, a:active {
 .navbar.navbar-inverse {
   margin-bottom: 0;
   border-radius: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 99999999;
 }
-/* line 5, public/sass/navigation/_menus.sass */
+/* line 8, public/sass/navigation/_menus.sass */
 .navbar.navbar-inverse .navbar-header .navbar-brand {
   display: table;
   padding: 0 0 0 10%;
 }
-/* line 8, public/sass/navigation/_menus.sass */
+/* line 11, public/sass/navigation/_menus.sass */
 .navbar.navbar-inverse .navbar-header .navbar-brand img {
   width: 50%;
 }
-/* line 13, public/sass/navigation/_menus.sass */
+/* line 16, public/sass/navigation/_menus.sass */
 .navbar.navbar-inverse .navbar-nav li.current-menu-item a {
   background-image: -webkit-linear-gradient(top, #080808 0%, #0f0f0f 100%);
   background-image: -o-linear-gradient(top, #080808 0%, #0f0f0f 100%);
@@ -749,7 +752,11 @@ a:hover, a:active {
 .single-projects .carousel .carousel-indicators {
   display: block;
 }
-/* line 12, public/sass/site/primary/_projects.sass */
+/* line 13, public/sass/site/primary/_projects.sass */
+.single-projects .carousel .carousel-inner img {
+  margin: 0 auto;
+}
+/* line 15, public/sass/site/primary/_projects.sass */
 .single-projects .carousel .carousel-caption {
   position: relative;
 }
