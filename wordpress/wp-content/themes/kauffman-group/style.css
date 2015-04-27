@@ -548,19 +548,11 @@ textarea {
 a {
   color: royalblue;
 }
-/* line 4, public/sass/navigation/_links.scss */
-a:visited {
-  color: purple;
-}
-/* line 7, public/sass/navigation/_links.scss */
-a:hover, a:focus, a:active {
-  color: midnightblue;
-}
-/* line 12, public/sass/navigation/_links.scss */
+/* line 8, public/sass/navigation/_links.scss */
 a:focus {
   outline: thin dotted;
 }
-/* line 15, public/sass/navigation/_links.scss */
+/* line 11, public/sass/navigation/_links.scss */
 a:hover, a:active {
   outline: 0;
 }

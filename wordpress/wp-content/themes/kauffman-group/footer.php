@@ -23,3 +23,7 @@
 
 </body>
 </html>
+
+<script>
+	$('#myModal').modal('hide');
+</script>

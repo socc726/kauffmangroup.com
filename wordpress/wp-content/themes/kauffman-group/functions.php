@@ -113,7 +113,7 @@ function custom_project() {
 		'description'         => __( 'Movie news and reviews', 'twentythirteen' ),
 		'labels'              => $labels,
 		// Features this CPT supports in Post Editor
-		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', 'dfiFeatured'),
 		// You can associate this CPT with a taxonomy or custom taxonomy. 
 		'taxonomies'          => array( 'genres' ),
 		/* A hierarchical CPT is like Pages and can have
@@ -132,7 +132,6 @@ function custom_project() {
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'capability_type'     => 'page',
-		'public' 			  => true,
 		'has_archive'         => true, 
 	);
 	
@@ -148,6 +147,10 @@ function custom_project() {
 
 add_action( 'init', 'custom_project', 0 );
 
+add_filter('dfi_post_types', 'filter_post_types');
+function filter_post_types() {
+	return array('post', 'page', 'projects'); //will display DFI in post and page
+}
 /**
  * Register widget area.
  *
@@ -175,14 +178,20 @@ function kauffmanscripts() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/public/styles/font-awesome.min.css', array(), '0.0.1','all' );
 	wp_enqueue_style( 'tabulous', get_template_directory_uri() . '/public/styles/tabulous.css', array(), '0.0.1','all' );
 	wp_enqueue_style( 'kauffman-style', get_stylesheet_uri() );
-	
-	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/public/js/jquery-1.11.2.min.js', array(), '20120206', true );
+	/**
+	 * Deregister jquery
+	 */
+	if( !is_admin()){
+		wp_deregister_script('jquery');
+		wp_enqueue_script( 'jquery', get_template_directory_uri() . '/public/js/jquery-1.11.2.min.js', array(), '20120206', true );
+	}
 	wp_enqueue_script( 'kauffman-tabulous', get_template_directory_uri() . '/public/js/tabulous.js', array(), '20120206', true );
 	wp_enqueue_script( 'kauffman-navigation', get_template_directory_uri() . '/public/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'kauffman-boostrap', get_template_directory_uri() . '/public/js/bootstrap.js', array(), '20120206', true );
 	wp_enqueue_script( 'kauffman-skip-link-focus-fix', get_template_directory_uri() . '/public/js/skip-link-focus-fix.js', array(), '20130115', true );
 }
 add_action( 'wp_enqueue_scripts', 'kauffmanscripts' );
+
 
 /**
  * Implement the Custom Header feature.
