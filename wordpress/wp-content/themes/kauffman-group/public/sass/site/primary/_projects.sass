@@ -3,6 +3,19 @@
 		h2
 			margin: 0
 			text-transform: uppercase
+	.thumbnail
+		.img-container
+			height: 300px
+			text-align: center
+			display: table
+			background: black
+			&:before
+				content: ""
+				display: inline-block
+				height: 100%
+				vertical-align: middle
+			img
+				vertical-align: middle
 .single-projects
 	.carousel
 		.carousel-indicators
@@ -10,5 +23,6 @@
 		.carousel-inner
 			img
 				margin: 0 auto
+				width: 100%
 		.carousel-caption
 			position: relative

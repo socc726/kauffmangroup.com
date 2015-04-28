@@ -571,7 +571,7 @@ a:hover, a:active {
 /* line 8, public/sass/navigation/_menus.sass */
 .navbar.navbar-inverse .navbar-header .navbar-brand {
   display: table;
-  padding: 0 0 0 10%;
+  padding: 0 0 0 3%;
 }
 /* line 11, public/sass/navigation/_menus.sass */
 .navbar.navbar-inverse .navbar-header .navbar-brand img {
@@ -742,51 +742,72 @@ a:hover, a:active {
   margin: 0;
   text-transform: uppercase;
 }
+/* line 7, public/sass/site/primary/_projects.sass */
+.post-type-archive-projects .thumbnail .img-container {
+  height: 300px;
+  text-align: center;
+  display: table;
+  background: black;
+}
+/* line 12, public/sass/site/primary/_projects.sass */
+.post-type-archive-projects .thumbnail .img-container:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+/* line 17, public/sass/site/primary/_projects.sass */
+.post-type-archive-projects .thumbnail .img-container img {
+  vertical-align: middle;
+}
 
-/* line 8, public/sass/site/primary/_projects.sass */
+/* line 21, public/sass/site/primary/_projects.sass */
 .single-projects .carousel .carousel-indicators {
   display: block;
 }
-/* line 11, public/sass/site/primary/_projects.sass */
+/* line 24, public/sass/site/primary/_projects.sass */
 .single-projects .carousel .carousel-inner img {
   margin: 0 auto;
+  width: 100%;
 }
-/* line 13, public/sass/site/primary/_projects.sass */
+/* line 27, public/sass/site/primary/_projects.sass */
 .single-projects .carousel .carousel-caption {
   position: relative;
 }
 
-/* line 2, public/sass/site/primary/_slider.sass */
+/* line 3, public/sass/site/primary/_slider.sass */
+.carousel .carousel-inner img {
+  width: 100%;
+}
+/* line 5, public/sass/site/primary/_slider.sass */
 .carousel .carousel-indicators {
   display: none;
 }
-/* line 4, public/sass/site/primary/_slider.sass */
+/* line 7, public/sass/site/primary/_slider.sass */
 .carousel .carousel-caption {
   background: black;
-  width: 100%;
   left: 0;
   right: 0;
   bottom: 0;
   text-align: left;
-  padding: 40px 60px 60px 60px;
 }
-/* line 12, public/sass/site/primary/_slider.sass */
+/* line 13, public/sass/site/primary/_slider.sass */
 .carousel .carousel-caption h4 {
   font-size: 38px;
   text-transform: uppercase;
   color: #fff;
   padding-bottom: 15px;
 }
-/* line 17, public/sass/site/primary/_slider.sass */
+/* line 18, public/sass/site/primary/_slider.sass */
 .carousel .carousel-caption p {
   font-size: 18px;
   line-height: 30px;
 }
-/* line 20, public/sass/site/primary/_slider.sass */
+/* line 21, public/sass/site/primary/_slider.sass */
 .carousel .carousel-control .icon-prev, .carousel .carousel-control .glyphicon-chevron-left {
   left: 40%;
 }
-/* line 22, public/sass/site/primary/_slider.sass */
+/* line 23, public/sass/site/primary/_slider.sass */
 .carousel .carousel-control .icon-prev, .carousel .carousel-control .glyphicon-chevron-right {
   right: 40%;
 }
