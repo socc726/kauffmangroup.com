@@ -702,39 +702,9 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-/* line 1, public/sass/site/primary/_posts-and-pages.scss */
-.sticky {
-  display: block;
-}
-
-/* line 5, public/sass/site/primary/_posts-and-pages.scss */
-.hentry {
-  margin: 0 0 1.5em;
-}
-
-/* line 9, public/sass/site/primary/_posts-and-pages.scss */
-.byline,
-.updated:not(.published) {
-  display: none;
-}
-
-/* line 14, public/sass/site/primary/_posts-and-pages.scss */
-.single .byline,
-.group-blog .byline {
-  display: inline;
-}
-
-/* line 19, public/sass/site/primary/_posts-and-pages.scss */
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
-
-/* line 25, public/sass/site/primary/_posts-and-pages.scss */
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em;
+/* line 1, public/sass/site/primary/_posts-and-pages.sass */
+#content {
+  background: #323232;
 }
 
 /* line 3, public/sass/site/primary/_projects.sass */
@@ -785,7 +755,7 @@ a:hover, a:active {
 }
 /* line 7, public/sass/site/primary/_slider.sass */
 .carousel .carousel-caption {
-  background: black;
+  background: #323232;
   left: 0;
   right: 0;
   bottom: 0;
