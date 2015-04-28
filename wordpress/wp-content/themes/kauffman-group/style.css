@@ -737,26 +737,21 @@ a:hover, a:active {
   margin: 0 0 1.5em;
 }
 
-/* line 2, public/sass/site/primary/_projects.sass */
-.post-type-archive-projects .page-header {
-  margin: 0;
-  padding: 0;
-}
-/* line 5, public/sass/site/primary/_projects.sass */
+/* line 3, public/sass/site/primary/_projects.sass */
 .post-type-archive-projects .page-header h2 {
   margin: 0;
   text-transform: uppercase;
 }
 
-/* line 10, public/sass/site/primary/_projects.sass */
+/* line 8, public/sass/site/primary/_projects.sass */
 .single-projects .carousel .carousel-indicators {
   display: block;
 }
-/* line 13, public/sass/site/primary/_projects.sass */
+/* line 11, public/sass/site/primary/_projects.sass */
 .single-projects .carousel .carousel-inner img {
   margin: 0 auto;
 }
-/* line 15, public/sass/site/primary/_projects.sass */
+/* line 13, public/sass/site/primary/_projects.sass */
 .single-projects .carousel .carousel-caption {
   position: relative;
 }
