@@ -27,8 +27,8 @@
         init: function() {
 
             var links = this.$elem.find('a');
-            var firstchild = this.$elem.find('.col-md-4:first-child').find('a');
-            var lastchild = this.$elem.find('.col-md-4:last-child').after('<span class="tabulousclear"></span>');
+            var firstchild = this.$elem.find('li:first-child').find('a');
+            var lastchild = this.$elem.find('li:last-child').after('<span class="tabulousclear"></span>');
 
             if (this.options.effect == 'scale') {
              tab_content = this.$elem.find('div').not(':first').not(':nth-child(1)').addClass('hidescale');
