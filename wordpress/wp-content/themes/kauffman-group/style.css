@@ -706,6 +706,10 @@ a:hover, a:active {
 #content {
   background: #323232;
 }
+/* line 6, public/sass/site/primary/_posts-and-pages.sass */
+#content .jumbotron .container .page-header h2 {
+  text-transform: uppercase;
+}
 
 /* line 3, public/sass/site/primary/_projects.sass */
 .post-type-archive-projects .page-header h2 {
