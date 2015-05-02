@@ -149,7 +149,7 @@ add_action( 'init', 'custom_project', 0 );
 
 add_filter('dfi_post_types', 'filter_post_types');
 function filter_post_types() {
-	return array('post', 'page', 'projects'); //will display DFI in post and page
+	return array('post', 'page', 'projects', 'employee'); //will display DFI in post and page
 }
 /**
  * Register widget area.

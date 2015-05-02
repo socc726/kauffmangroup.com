@@ -1,4 +1,16 @@
-$font__main: sans-serif;
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('public/styles/fonts/opensans-regular-webfont.eot');
+    src: url('public/styles/fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('public/styles/fonts/opensans-regular-webfont.woff2') format('woff2'),
+         url('public/styles/fonts/opensans-regular-webfont.woff') format('woff'),
+         url('public/styles/fonts/opensans-regular-webfont.ttf') format('truetype'),
+         url('public/styles/fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+$font__main: 'open_sansregular';
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;

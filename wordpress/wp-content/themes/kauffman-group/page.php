@@ -20,17 +20,39 @@ get_header(); ?>
 	<div class="jumbotron">
 
 
-	  <div class="container">
+	  <div class="text-module">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<div class="page-header">
 					<h2><?php the_title(); ?></h2>
 				</div>
 				<?php get_template_part( 'content', 'page' ); ?>
-
+				
 			<?php endwhile; // end of the loop. ?>
 	  </div>
+
 	</div>
-		<div id="tabs" class="container">
+	      <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-default estimate">
+              <div class="panel-heading">
+              	            <h3 class="panel-title text-center uppercase">Request An Estimate</h3>
+              </div>
+            <div class="panel-body">
+            <p class="text-center">Call us at (703) 909-2104 for a free estimate</p>
+              <input type="text" class="form-control" placeholder="Name" required="" autofocus=""><br>        
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" >
+              <br>
+              <input type="phone" class="form-control" placeholder="Phone" required="">
+              <br>
+              <textarea style="padding:10px 57% 0 10px" id="" placeholder="Brief Project Description" rows="10"></textarea><br><br>
+              <button class="btn btn-lg btn-default btn-block" type="submit">Submit</button>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+		<div id="tabs" class="container-fluid">
 			<ul class="row">
 				<li class="col-md-3"><a href="#tabs-1" class="tabulous_active" title=""><i class="fa fa-diamond fa-5x"></i></a></li>
 				<li class="col-md-3"><a href="#tabs-2" title=""><i class="fa fa-road fa-5x"></i></a></li>
