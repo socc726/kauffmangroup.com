@@ -727,6 +727,12 @@ a:hover, a:active {
 #content .jumbotron .container .panel.estimate h3 {
   text-transform: uppercase;
 }
+/* line 16, public/sass/site/primary/_posts-and-pages.sass */
+#content #tabs_container div {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
 
 /* line 3, public/sass/site/primary/_projects.sass */
 .post-type-archive-projects .page-header h2 {

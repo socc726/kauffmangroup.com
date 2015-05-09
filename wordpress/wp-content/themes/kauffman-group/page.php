@@ -33,23 +33,7 @@ get_header(); ?>
 	</div>
 	      <div class="row">
         <div class="col-sm-4">
-          <div class="panel panel-default estimate">
-              <div class="panel-heading">
-              	            <h3 class="panel-title text-center uppercase">Request An Estimate</h3>
-              </div>
-            <div class="panel-body">
-            <p class="text-center">Call us at (703) 909-2104 for a free estimate</p>
-              <input type="text" class="form-control" placeholder="Name" required="" autofocus=""><br>        
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" >
-              <br>
-              <input type="phone" class="form-control" placeholder="Phone" required="">
-              <br>
-              <textarea style="padding:10px 57% 0 10px" id="" placeholder="Brief Project Description" rows="10"></textarea><br><br>
-              <button class="btn btn-lg btn-default btn-block" type="submit">Submit</button>
 
-              
-            </div>
-          </div>
         </div>
       </div>
 		<div id="tabs" class="container-fluid">
@@ -60,10 +44,22 @@ get_header(); ?>
 				<li class="col-md-3"><a href="#tabs-4" title=""><i class="fa fa-institution fa-5x"></i></a></li>
 			</ul>
 			<div id="tabs_container">
-				<div id="tabs-1">
-					<h2>Heading</h2>
-					<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-					<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+				<div id="tabs-1" class="col-sm-4">
+					<section class="panel panel-default estimate">
+						<section class="panel-heading">
+							<h3 class="panel-title text-center uppercase">Request An Estimate</h3>
+						</section>
+						<section class="panel-body">
+							<p class="text-center">Call us at (703) 909-2104 for a free estimate</p>
+							<input type="text" class="form-control" placeholder="Name" required="" autofocus=""><br>        
+							<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" >
+							<br>
+							<input type="phone" class="form-control" placeholder="Phone" required="">
+							<br>
+							<textarea style="padding:10px 57% 0 10px" id="" placeholder="Brief Project Description" rows="10"></textarea><br><br>
+							<button class="btn btn-lg btn-default btn-block" type="submit">Submit</button>
+						</section>
+					</section>
 				</div>
 				<div id="tabs-2">
 					<h2>Heading</h2>
