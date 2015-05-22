@@ -17,9 +17,10 @@ get_header(); ?>
 
 ?>
 	<!-- Main jumbotron for a primary marketing message or call to action -->
+	
 	<div class="jumbotron">
 
-
+<div class="container">
 	  <div class="text-module">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<div class="page-header">
@@ -30,13 +31,10 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 	  </div>
 
+	</div>		
 	</div>
-	      <div class="row">
-        <div class="col-sm-4">
 
-        </div>
-      </div>
-		<div id="tabs" class="container-fluid">
+		<div id="tabs" class="container">
 			<ul class="row">
 				<li class="col-md-3"><a href="#tabs-1" class="tabulous_active" title=""><i class="fa fa-diamond fa-5x"></i></a></li>
 				<li class="col-md-3"><a href="#tabs-2" title=""><i class="fa fa-road fa-5x"></i></a></li>
@@ -51,7 +49,7 @@ get_header(); ?>
 						</section>
 						<section class="panel-body">
 							<p class="text-center">Call us at (703) 909-2104 for a free estimate</p>
-							<input type="text" class="form-control" placeholder="Name" required="" autofocus=""><br>        
+							<input type="text" class="form-control" placeholder="Name" required=""><br>        
 							<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" >
 							<br>
 							<input type="phone" class="form-control" placeholder="Phone" required="">
