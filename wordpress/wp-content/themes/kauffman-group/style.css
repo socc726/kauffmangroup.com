@@ -715,23 +715,27 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 /* line 1, public/sass/site/primary/_posts-and-pages.sass */
 #content {
-  background: #323232;
+  background: #fff;
 }
-/* line 6, public/sass/site/primary/_posts-and-pages.sass */
+/* line 3, public/sass/site/primary/_posts-and-pages.sass */
+#content .jumbotron {
+  background: #fff;
+}
+/* line 7, public/sass/site/primary/_posts-and-pages.sass */
 #content .jumbotron .container .page-header h2 {
-  text-transform: uppercase;
+  text-align: center;
 }
-/* line 8, public/sass/site/primary/_posts-and-pages.sass */
+/* line 9, public/sass/site/primary/_posts-and-pages.sass */
 #content .jumbotron .container .panel.estimate {
   margin: 30px 0 0 0;
   box-shadow: 0px 2px 13px -1px #000;
   border: 0;
 }
-/* line 12, public/sass/site/primary/_posts-and-pages.sass */
+/* line 13, public/sass/site/primary/_posts-and-pages.sass */
 #content .jumbotron .container .panel.estimate h3 {
   text-transform: uppercase;
 }
-/* line 16, public/sass/site/primary/_posts-and-pages.sass */
+/* line 17, public/sass/site/primary/_posts-and-pages.sass */
 #content #tabs_container div {
   margin: 0 auto;
   left: 0;
