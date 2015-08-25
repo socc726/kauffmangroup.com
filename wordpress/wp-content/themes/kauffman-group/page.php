@@ -54,22 +54,22 @@ get_header(); ?>
 							<br>
 							<input type="phone" class="form-control" placeholder="Phone" required="">
 							<br>
-							<textarea style="padding:10px 57% 0 10px" id="" placeholder="Brief Project Description" rows="10"></textarea><br><br>
+							<textarea style="padding:10px 5% 0 10px" class="form-control" placeholder="Brief Project Description" rows="10"></textarea><br><br>
 							<button class="btn btn-lg btn-default btn-block" type="submit">Submit</button>
 						</section>
 					</section>
 				</div>
-				<div id="tabs-2">
+				<div id="tabs-2" class="col-sm-4">
 					<h2>Heading</h2>
 					<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 					<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
 				</div>
-				<div id="tabs-3">
+				<div id="tabs-3" class="col-sm-4">
 					<h2>Heading</h2>
 					<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 					<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
 				</div>
-				<div id="tabs-4">
+				<div id="tabs-4" class="col-sm-4">
 					<h2>Heading</h2>
 					<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 					<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>

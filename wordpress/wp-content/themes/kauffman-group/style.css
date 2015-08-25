@@ -47,6 +47,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   font-weight: normal;
   font-style: normal;
 }
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -62,7 +63,7 @@ body {
   margin: 0;
 }
 
-/* line 11, public/sass/_normalize.scss */
+/* line 22, public/sass/_normalize.scss */
 article,
 aside,
 details,
@@ -78,7 +79,7 @@ summary {
   display: block;
 }
 
-/* line 26, public/sass/_normalize.scss */
+/* line 29, public/sass/_normalize.scss */
 audio,
 canvas,
 progress,
@@ -93,7 +94,7 @@ audio:not([controls]) {
   height: 0;
 }
 
-/* line 39, public/sass/_normalize.scss */
+/* line 40, public/sass/_normalize.scss */
 [hidden],
 template {
   display: none;
@@ -104,7 +105,7 @@ a {
   background-color: transparent;
 }
 
-/* line 48, public/sass/_normalize.scss */
+/* line 49, public/sass/_normalize.scss */
 a:active,
 a:hover {
   outline: 0;
@@ -115,7 +116,7 @@ abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/* line 57, public/sass/_normalize.scss */
+/* line 58, public/sass/_normalize.scss */
 b,
 strong {
   font-weight: bold;
@@ -143,7 +144,7 @@ small {
   font-size: 80%;
 }
 
-/* line 80, public/sass/_normalize.scss */
+/* line 81, public/sass/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -188,7 +189,7 @@ pre {
   overflow: auto;
 }
 
-/* line 117, public/sass/_normalize.scss */
+/* line 120, public/sass/_normalize.scss */
 code,
 kbd,
 pre,
@@ -197,7 +198,7 @@ samp {
   font-size: 1em;
 }
 
-/* line 125, public/sass/_normalize.scss */
+/* line 129, public/sass/_normalize.scss */
 button,
 input,
 optgroup,
@@ -213,13 +214,13 @@ button {
   overflow: visible;
 }
 
-/* line 139, public/sass/_normalize.scss */
+/* line 140, public/sass/_normalize.scss */
 button,
 select {
   text-transform: none;
 }
 
-/* line 144, public/sass/_normalize.scss */
+/* line 147, public/sass/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -228,13 +229,13 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-/* line 152, public/sass/_normalize.scss */
+/* line 153, public/sass/_normalize.scss */
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
 
-/* line 157, public/sass/_normalize.scss */
+/* line 158, public/sass/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -246,14 +247,14 @@ input {
   line-height: normal;
 }
 
-/* line 167, public/sass/_normalize.scss */
+/* line 168, public/sass/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-/* line 173, public/sass/_normalize.scss */
+/* line 174, public/sass/_normalize.scss */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
@@ -265,7 +266,7 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-/* line 183, public/sass/_normalize.scss */
+/* line 184, public/sass/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -300,7 +301,7 @@ table {
   border-spacing: 0;
 }
 
-/* line 212, public/sass/_normalize.scss */
+/* line 213, public/sass/_normalize.scss */
 td,
 th {
   padding: 0;
@@ -309,7 +310,7 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-/* line 1, public/sass/typography/_typography.scss */
+/* line 5, public/sass/typography/_typography.scss */
 body,
 button,
 input,
@@ -349,7 +350,7 @@ address {
 
 /* line 17, public/sass/typography/_copy.scss */
 pre {
-  background: #eee;
+  background: #eeeeee;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
   font-size: 0.9375rem;
@@ -369,7 +370,7 @@ code, kbd, tt, var {
 
 /* line 33, public/sass/typography/_copy.scss */
 abbr, acronym {
-  border-bottom: 1px dotted #666;
+  border-bottom: 1px dotted #666666;
   cursor: help;
 }
 
@@ -392,7 +393,7 @@ html {
   box-sizing: border-box;
 }
 
-/* line 5, public/sass/elements/_elements.scss */
+/* line 7, public/sass/elements/_elements.scss */
 *,
 *:before,
 *:after {
@@ -402,7 +403,7 @@ html {
 
 /* line 11, public/sass/elements/_elements.scss */
 body {
-  background: #fff;
+  background: white;
   /* Fallback for when there is no custom background color defined. */
 }
 
@@ -410,14 +411,14 @@ body {
 blockquote, q {
   quotes: "" "";
 }
-/* line 18, public/sass/elements/_elements.scss */
+/* line 19, public/sass/elements/_elements.scss */
 blockquote:before, blockquote:after, q:before, q:after {
   content: "";
 }
 
 /* line 24, public/sass/elements/_elements.scss */
 hr {
-  background-color: #ccc;
+  background-color: #cccccc;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -438,7 +439,7 @@ ol {
   list-style: decimal;
 }
 
-/* line 13, public/sass/elements/_lists.scss */
+/* line 14, public/sass/elements/_lists.scss */
 li > ul,
 li > ol {
   margin-bottom: 0;
@@ -472,52 +473,15 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-/* line 1, public/sass/forms/_buttons.scss */
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1;
-  padding: .6em 1em .4em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-/* line 16, public/sass/forms/_buttons.scss */
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-  border-color: #ccc #bbb #aaa;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-}
-/* line 21, public/sass/forms/_buttons.scss */
-button:active, button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-  border-color: #aaa #bbb #bbb;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-/* line 1, public/sass/forms/_fields.scss */
+/* line 6, public/sass/forms/_fields.scss */
 input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
+  color: #666666;
+  border: 1px solid #cccccc;
   border-radius: 3px;
 }
 /* line 11, public/sass/forms/_fields.scss */
@@ -527,16 +491,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-  color: #111;
-}
-
-/* line 16, public/sass/forms/_fields.scss */
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-  padding: 3px;
+  color: #111111;
 }
 
 /* line 24, public/sass/forms/_fields.scss */
@@ -559,7 +514,7 @@ a {
 a:focus {
   outline: thin dotted;
 }
-/* line 11, public/sass/navigation/_links.scss */
+/* line 12, public/sass/navigation/_links.scss */
 a:hover, a:active {
   outline: 0;
 }
@@ -612,7 +567,7 @@ a:hover, a:active {
   width: 1px;
   overflow: hidden;
 }
-/* line 9, public/sass/modules/_accessibility.scss */
+/* line 11, public/sass/modules/_accessibility.scss */
 .screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;
@@ -661,7 +616,7 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
-/* line 1, public/sass/modules/_clearings.scss */
+/* line 12, public/sass/modules/_clearings.scss */
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -678,7 +633,7 @@ a:hover, a:active {
   display: table;
 }
 
-/* line 16, public/sass/modules/_clearings.scss */
+/* line 21, public/sass/modules/_clearings.scss */
 .clear:after,
 .entry-content:after,
 .comment-content:after,
@@ -715,11 +670,11 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 /* line 1, public/sass/site/primary/_posts-and-pages.sass */
 #content {
-  background: #fff;
+  background: white;
 }
 /* line 3, public/sass/site/primary/_posts-and-pages.sass */
 #content .jumbotron {
-  background: #fff;
+  background: white;
 }
 /* line 7, public/sass/site/primary/_posts-and-pages.sass */
 #content .jumbotron .container .page-header h2 {
@@ -728,7 +683,7 @@ a:hover, a:active {
 /* line 9, public/sass/site/primary/_posts-and-pages.sass */
 #content .jumbotron .container .panel.estimate {
   margin: 30px 0 0 0;
-  box-shadow: 0px 2px 13px -1px #000;
+  box-shadow: 0px 2px 13px -1px black;
   border: 0;
 }
 /* line 13, public/sass/site/primary/_posts-and-pages.sass */
@@ -804,7 +759,7 @@ a:hover, a:active {
 .carousel .carousel-caption h4 {
   font-size: 38px;
   text-transform: uppercase;
-  color: #fff;
+  color: white;
   padding-bottom: 15px;
 }
 /* line 20, public/sass/site/primary/_slider.sass */
@@ -824,7 +779,7 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
-/* line 1, public/sass/site/primary/_asides.scss */
+/* line 2, public/sass/site/primary/_asides.scss */
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
   display: none;
@@ -847,7 +802,7 @@ a:hover, a:active {
 # Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-/* line 2, public/sass/modules/_infinite-scroll.scss */
+/* line 3, public/sass/modules/_infinite-scroll.scss */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
   /* Theme Footer (when set to scrolling) */
@@ -863,7 +818,7 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-/* line 1, public/sass/media/_media.scss */
+/* line 3, public/sass/media/_media.scss */
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -874,7 +829,7 @@ a:hover, a:active {
 }
 
 /* Make sure embeds and iframes fit their containers. */
-/* line 11, public/sass/media/_media.scss */
+/* line 13, public/sass/media/_media.scss */
 embed,
 iframe,
 object {

@@ -16,6 +16,15 @@ p {
 	margin: 0 auto;
 	margin-bottom: 40px;
 }
+#tabs-1, #tabs-2, #tabs-3, #tabs-4{
+	z-index: 99999;
+}
+#tabs_container .col-sm-4.hidescale{
+	z-index: 0;
+}
+#tabs_container .col-sm-4.hidescale.showscale{
+	z-index: 9999;
+}
 #tabs .row{
 	padding: 0;
 }
