@@ -14,7 +14,11 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<?php wp_head(); ?>
+<?php 
+wp_head(); 
+wp_footer();
+?>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -37,7 +41,20 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
 
-		<?php wp_nav_menu( array( 'theme_location' => 'primary','container' => false, 'menu_id' => 'primary-menu', 'items_wrap' => '<ul id="%1$s" class="nav navbar-nav">%3$s</ul>', ) ); ?>
+		<?php
+
+        $args = array(
+          'theme_location' => 'primary',
+          'depth'    => 0,
+          'container'  => false,
+          'menu_class'   => 'nav',
+          'walker'   => new BootstrapNavMenuWalker(),
+          'items_wrap' => '<ul class="nav navbar-nav">%3$s</ul>'
+        );
+
+        wp_nav_menu($args);
+
+     ?>
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
