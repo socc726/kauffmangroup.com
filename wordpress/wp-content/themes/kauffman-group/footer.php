@@ -51,10 +51,11 @@
 		</div><!--End tabs container--> 
 	</div><!--End tabs-->
 		<br>
-	<hr>
-	<br><br>
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer style="background: #6B4425" id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
+			<img style="float:left;padding:20px;" src="<?php bloginfo('template_directory')?>/logo.jpg" alt="">
+			<img style="float:right;padding:20px;" src="<?php bloginfo('template_directory')?>/logo.jpg" alt="">
+
 			<nav class="navbar navbar-default nav-footer">
 				<?php
 

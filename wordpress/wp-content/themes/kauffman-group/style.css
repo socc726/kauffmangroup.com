@@ -564,14 +564,15 @@ a:hover, a:active {
 .navbar.nav-footer {
   margin: 0 auto;
   display: table;
+  padding: 10px;
 }
-/* line 36, public/sass/navigation/_menus.sass */
+/* line 37, public/sass/navigation/_menus.sass */
 .navbar.nav-footer > ul > li.active > a {
   background-image: none;
   box-shadow: 0 0;
-  background-color: white;
+  background-color: transparent;
 }
-/* line 41, public/sass/navigation/_menus.sass */
+/* line 42, public/sass/navigation/_menus.sass */
 .navbar.nav-footer .dropdown ul {
   top: -140px;
 }
