@@ -18,6 +18,9 @@ p {
 }
 #tabs-1, #tabs-2, #tabs-3, #tabs-4{
 	z-index: 99999;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
 }
 #tabs_container .col-sm-4.hidescale{
 	z-index: 0;
@@ -52,9 +55,6 @@ p {
 	position: relative;
 }
 
-#tabs_container div {
-	margin-right: 40px;
-}
 
 .transition {
 	-webkit-transition: all .3s ease-in-out;
