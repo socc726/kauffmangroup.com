@@ -1,19 +1,22 @@
 .carousel
 	.carousel-inner
 		.item
-			max-height: 636px
 			background-color: #000
 			img
 				width: auto
 				margin: 0 auto
 	.carousel-indicators
 		display: none
+		bottom: 0
 	.carousel-caption
 		background: #323232
 		left: 0
 		right: 0
 		bottom: 0
-		text-align: left
+		text-align: center
+		span
+			font-style: italic
+			font-size: 16px
 		h4
 			font-size: 38px
 			text-transform: uppercase
@@ -25,4 +28,6 @@
 	.carousel-control .icon-prev, .carousel-control .glyphicon-chevron-left
 		left: 40%
 	.carousel-control .icon-prev, .carousel-control .glyphicon-chevron-right
-		right: 40%		
+		right: 40%
+.home .carousel .carousel-inner .item
+	max-height: 636px

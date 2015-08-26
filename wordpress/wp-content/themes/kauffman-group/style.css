@@ -764,17 +764,17 @@ a:hover, a:active {
 
 /* line 3, public/sass/site/primary/_slider.sass */
 .carousel .carousel-inner .item {
-  max-height: 636px;
   background-color: black;
 }
-/* line 6, public/sass/site/primary/_slider.sass */
+/* line 5, public/sass/site/primary/_slider.sass */
 .carousel .carousel-inner .item img {
   width: auto;
   margin: 0 auto;
 }
-/* line 9, public/sass/site/primary/_slider.sass */
+/* line 8, public/sass/site/primary/_slider.sass */
 .carousel .carousel-indicators {
   display: none;
+  bottom: 0;
 }
 /* line 11, public/sass/site/primary/_slider.sass */
 .carousel .carousel-caption {
@@ -782,27 +782,37 @@ a:hover, a:active {
   left: 0;
   right: 0;
   bottom: 0;
-  text-align: left;
+  text-align: center;
 }
 /* line 17, public/sass/site/primary/_slider.sass */
+.carousel .carousel-caption span {
+  font-style: italic;
+  font-size: 16px;
+}
+/* line 20, public/sass/site/primary/_slider.sass */
 .carousel .carousel-caption h4 {
   font-size: 38px;
   text-transform: uppercase;
   color: white;
   padding-bottom: 15px;
 }
-/* line 22, public/sass/site/primary/_slider.sass */
+/* line 25, public/sass/site/primary/_slider.sass */
 .carousel .carousel-caption p {
   font-size: 18px;
   line-height: 30px;
 }
-/* line 25, public/sass/site/primary/_slider.sass */
+/* line 28, public/sass/site/primary/_slider.sass */
 .carousel .carousel-control .icon-prev, .carousel .carousel-control .glyphicon-chevron-left {
   left: 40%;
 }
-/* line 27, public/sass/site/primary/_slider.sass */
+/* line 30, public/sass/site/primary/_slider.sass */
 .carousel .carousel-control .icon-prev, .carousel .carousel-control .glyphicon-chevron-right {
   right: 40%;
+}
+
+/* line 32, public/sass/site/primary/_slider.sass */
+.home .carousel .carousel-inner .item {
+  max-height: 636px;
 }
 
 /*--------------------------------------------------------------
