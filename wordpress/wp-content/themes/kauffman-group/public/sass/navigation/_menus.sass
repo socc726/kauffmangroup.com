@@ -11,6 +11,11 @@
 			img
 				width: 50%
 	.navbar-nav
+		.active.dropdown
+			ul 
+				li > a
+					background-image: none
+					box-shadow: 0 0
 		li
 			&.current-menu-item
 				a
@@ -28,9 +33,10 @@
 .navbar.nav-footer
 	margin: 0 auto
 	display: table
-	.active > a
+	> ul > li.active > a
 		background-image: none
 		box-shadow: 0 0
-		background-color: #fff
-		&:hover
-			background-color: #fff
+		background-color: #fff		
+	.dropdown
+		ul
+			top: -140px

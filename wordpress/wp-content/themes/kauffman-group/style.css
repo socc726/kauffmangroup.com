@@ -540,6 +540,11 @@ a:hover, a:active {
   width: 50%;
 }
 /* line 16, public/sass/navigation/_menus.sass */
+.navbar.navbar-inverse .navbar-nav .active.dropdown ul li > a {
+  background-image: none;
+  box-shadow: 0 0;
+}
+/* line 21, public/sass/navigation/_menus.sass */
 .navbar.navbar-inverse .navbar-nav li.current-menu-item a {
   background-image: -webkit-linear-gradient(top, #080808 0%, #0f0f0f 100%);
   background-image: -o-linear-gradient(top, #080808 0%, #0f0f0f 100%);
@@ -550,25 +555,25 @@ a:hover, a:active {
   -webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.25);
 }
-/* line 26, public/sass/navigation/_menus.sass */
+/* line 31, public/sass/navigation/_menus.sass */
 .navbar.navbar-inverse .navbar-collapse.pull-right.in {
   float: none !important;
 }
 
-/* line 28, public/sass/navigation/_menus.sass */
+/* line 33, public/sass/navigation/_menus.sass */
 .navbar.nav-footer {
   margin: 0 auto;
   display: table;
 }
-/* line 31, public/sass/navigation/_menus.sass */
-.navbar.nav-footer .active > a {
+/* line 36, public/sass/navigation/_menus.sass */
+.navbar.nav-footer > ul > li.active > a {
   background-image: none;
   box-shadow: 0 0;
   background-color: white;
 }
-/* line 35, public/sass/navigation/_menus.sass */
-.navbar.nav-footer .active > a:hover {
-  background-color: white;
+/* line 41, public/sass/navigation/_menus.sass */
+.navbar.nav-footer .dropdown ul {
+  top: -140px;
 }
 
 /*--------------------------------------------------------------
