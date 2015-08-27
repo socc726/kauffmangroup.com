@@ -43,9 +43,20 @@ get_header(); ?>
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-	<!-- Main jumbotron for a primary marketing message or call to action -->
+   <!-- Hidden php variable -->
+<div id="dom-target" style="display: none;">
+	<?php 
+
+		$output = $_SERVER['QUERY_STRING'];
+		if(!empty($output)){
+			echo trim(urldecode(str_replace('special=', '', $output)));
+		} 
+
+	?>
+</div>
+<!-- Main jumbotron for a primary marketing message or call to action -->
 	
-	<div class="jumbotron">
+<div class="jumbotron">
 
 <div class="container">
 

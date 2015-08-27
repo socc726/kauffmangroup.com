@@ -332,15 +332,15 @@ class wpb_widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 
 		$title = apply_filters( 'widget_title', $instance['title'] );
-
+		$desc = apply_filters( 'widget_desc', $instance['desc'] );
 		// before and after widget arguments are defined by themes
 		echo $args['before_widget'];
 
 		if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
 
-		// This is where you run the code and display the output
-		echo __( 'Hello, World!', 'kgi_special_widget' );
+		if ( ! empty( $desc ) )
+			echo $args['before_desc'] . $desc . $args['after_desc'];
 
 		echo $args['after_widget'];
 	}
@@ -352,11 +352,16 @@ class wpb_widget extends WP_Widget {
 
 			$title = $instance[ 'title' ];
 
-		}
-		else {
-
+		}else{
 			$title = __( 'New title', 'kgi_special_widget' );
+		}
 
+		if( isset( $instance['desc'] ) ){
+
+			$desc = $instance[ 'desc' ];
+
+		}else{
+			$desc = __( 'New description', 'kgi_special_widget' );
 		}
 
 		// Widget admin form
@@ -364,6 +369,9 @@ class wpb_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+
+			<label for="<?php echo $this->get_field_id( 'desc' ); ?>"><?php _e( 'desc:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'desc' ); ?>" name="<?php echo $this->get_field_name( 'desc' ); ?>" type="text" value="<?php echo esc_attr( $desc ); ?>" />
 		</p>
 
 	<?php }
@@ -374,7 +382,7 @@ class wpb_widget extends WP_Widget {
 		$instance = array();
 
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-
+		$instance['desc'] = ( ! empty( $new_instance['desc'] ) ) ? strip_tags( $new_instance['desc'] ) : '';
 		return $instance;
 	}
 
@@ -396,6 +404,8 @@ register_sidebar( array(
 	'description' => __( 'Add your daily, monthly, and yearly specials/deals here!', 'kauffman-group' ),
 	'before_widget' => '<li id="%1$s" class="specials-container %2$s">',
 	'after_widget' => "</li>",
-	'before_title' => '<h3 class="specials-title">',
-	'after_title' => '</h3>',
+	'before_title' => '<section class="special-container"><section class="special-box"><h3>',
+	'after_title' => '</h3></section>',
+	'before_desc' => '<p>',
+	'after_desc' => '</p><i class="fa fa-money fa-5x"></i></section>',
 ) );

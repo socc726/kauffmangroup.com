@@ -34,8 +34,8 @@
 				</section>
 			</div>
 			<div id="tabs-2" class="col-sm-4">
+
 				<?php
-				
 				      if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Kauffman Group Specials') ) : ?>
 
 				<?php endif; ?>
@@ -107,10 +107,17 @@
 		$('ul.nav li.dropdown').on("click", function(){
 			window.location = $(this)[0].firstChild.href;
 		});
-	  $('ul.nav li.dropdown, ul.nav li.dropdown-submenu').hover(function() {
+		$('ul.nav li.dropdown, ul.nav li.dropdown-submenu').hover(function() {
 			$(this).find(' > .dropdown-menu').stop(true, true).delay(200).fadeIn();
 		}, function() {
 			$(this).find(' > .dropdown-menu').stop(true, true).delay(200).fadeOut();
 		});
+		$('.specials-container').on("click", function(e){
+			window.location = 'contact-us?special=' + e.currentTarget.firstChild.children[0].innerText;
+		});
+		var specialText = $('#dom-target')[0].innerText;
+		console.log(specialText);
+		$('.wpcf7-textarea').val('I am interested in the special: "' + specialText.replace(/(\r\n|\n|\r)/gm,"").trim() + '"');
 	});
+
 </script>
