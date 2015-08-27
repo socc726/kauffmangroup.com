@@ -34,9 +34,11 @@
 				</section>
 			</div>
 			<div id="tabs-2" class="col-sm-4">
-				<h2>Fall Special</h2>
-				<p>Large or Small, We Do Them All</p>
-				<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+				<?php
+				
+				      if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Kauffman Group Specials') ) : ?>
+
+				<?php endif; ?>
 			</div>
 			<div id="tabs-3" class="col-sm-4">
 				<h2>Heading</h2>
