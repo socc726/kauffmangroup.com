@@ -549,13 +549,20 @@ function cf_post_id() {
 
    // Echo out the field
    echo '<input type="text" name="_id" value="' . $id . '" class="widefat" disabled />';
-  }
+ }
 
- function ve_custom_meta_boxes() {
-    add_meta_box('projects_refid', 'Post ID', 'cf_post_id', 'post', 'side', 'high');
-    add_meta_box('projects_refid', 'Page ID', 'cf_post_id', 'page', 'side', 'high');
-     add_meta_box('projects_refid', 'Page ID', 'cf_post_id', 'projects', 'side', 'high');
-   }
-   add_action('add_meta_boxes', 've_custom_meta_boxes');
+function ve_custom_meta_boxes() {
+	add_meta_box('projects_refid', 'Post ID', 'cf_post_id', 'post', 'side', 'high');
+	add_meta_box('projects_refid', 'Page ID', 'cf_post_id', 'page', 'side', 'high');
+	add_meta_box('projects_refid', 'Page ID', 'cf_post_id', 'projects', 'side', 'high');
+}
+add_action('add_meta_boxes', 've_custom_meta_boxes');
+
+add_filter( 'wpcf7_form_class_attr', 'your_custom_form_class_attr' );
+
+function your_custom_form_class_attr( $class ) {
+	$class .= ' panel panel-default estimate';
+	return $class;
+}
 
 ?>

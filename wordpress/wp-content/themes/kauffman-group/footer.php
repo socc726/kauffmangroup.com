@@ -19,21 +19,33 @@
 		</ul>
 		<div id="tabs_container">
 			<div id="tabs-1" class="col-sm-4">
-				<section class="panel panel-default estimate">
+				<!-- <section class="panel panel-default estimate">
+				<section class="panel-heading">
+				<h3 class="panel-title text-center uppercase">Request A Free Estimate</h3>
+				</section>
+				<section class="panel-body">
+				<p class="text-center">Call us at (703) 909-2104 for a free estimate</p>
+				<input type="text" class="form-control" placeholder="Name" required="">
+				<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" >
+				<input type="phone" class="form-control" placeholder="Phone" required="">
+				<textarea style="padding:10px 5% 0 10px" class="form-control" placeholder="Brief Project Description" rows="10"></textarea>
+				<button class="btn btn-lg btn-default btn-block" type="submit">Submit</button>
+				</section>
+				</section> -->
+				<!-- <section class="panel panel-default estimate">
 					<section class="panel-heading">
 						<h3 class="panel-title text-center uppercase">Request A Free Estimate</h3>
 					</section>
 					<section class="panel-body">
 						<p class="text-center">Call us at (703) 909-2104 for a free estimate</p>
-						<input type="text" class="form-control" placeholder="Name" required=""><br>        
-						<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" >
-						<br>
-						<input type="phone" class="form-control" placeholder="Phone" required="">
-						<br>
-						<textarea style="padding:10px 5% 0 10px" class="form-control" placeholder="Brief Project Description" rows="10"></textarea><br><br>
-						<button class="btn btn-lg btn-default btn-block" type="submit">Submit</button>
+				[text* text-22 class:form-control placeholder "Name"]
+				[email email-803 class:form-control placeholder "Email Address"]
+				[tel tel-861 class:form-control placeholder "Phone"]
+				[textarea textarea-521 class:form-control class:free-text-area placeholder "Brief Project Description"]
+				[submit class:btn class:btn-lg class:btn-default class:btn-block "Submit"]
 					</section>
-				</section>
+				</section> -->
+				<?php echo do_shortcode('[contact-form-7 id="174" title="Free Estimate"]'); ?>
 			</div>
 			<div id="tabs-2" class="col-sm-4">
 				<?php

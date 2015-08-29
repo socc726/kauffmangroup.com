@@ -717,6 +717,24 @@ a:hover, a:active {
   z-index: 1000000000000;
 }
 
+/* line 37, public/sass/site/secondary/_widgets.sass */
+.estimate .panel-body {
+  padding: 15px 15px 0;
+}
+/* line 39, public/sass/site/secondary/_widgets.sass */
+.estimate .panel-body p {
+  margin-bottom: 0;
+}
+/* line 41, public/sass/site/secondary/_widgets.sass */
+.estimate .panel-body .text-center {
+  margin-bottom: 1.5em;
+}
+/* line 44, public/sass/site/secondary/_widgets.sass */
+.estimate .wpcf7-response-output.hidescale {
+  opacity: 1;
+  margin: 0;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/

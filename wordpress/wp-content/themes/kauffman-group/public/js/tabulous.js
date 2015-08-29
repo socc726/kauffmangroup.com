@@ -42,7 +42,7 @@
 
             var firstdiv = this.$elem.find('#tabs_container');
             var firstdivheight = 0;
-            var alldivs = this.$elem.find('div:first').find('div');
+            var alldivs = this.$elem.find('div:first').find('div.col-sm-4');
             $(window).load(function() {
                 firstdivheight = firstdiv.find('div:first').height() + 40;
 
