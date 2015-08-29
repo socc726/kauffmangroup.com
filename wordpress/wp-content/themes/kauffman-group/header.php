@@ -33,7 +33,7 @@ wp_footer();
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="<?php bloginfo('url'); ?>">
       	<img src="<?php bloginfo('template_directory')?>/screenshot.gif" alt="">
       </a>
     </div>

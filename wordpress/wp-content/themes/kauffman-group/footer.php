@@ -7,19 +7,21 @@
  * @package Kauffman
  */
 ?>
-
+	<?php
+	      if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Kauffman Group Featured Project') ) : ?>
+	<?php endif; ?>
 	<div id="tabs" class="container">
 		<ul class="row">
-			<li class="col-md-3"><a href="#tabs-1" class="tabulous_active" title=""><i class="fa fa-road fa-5x"></i></a>Free Estimate</li>
-			<li class="col-md-3"><a href="#tabs-2" title=""><i class="fa fa-dollar fa-5x"></i></a>Specials</li>
-			<li class="col-md-3"><a href="#tabs-3" title=""><i class="fa fa-camera-retro fa-5x"></i></a></li>
+			<li class="col-md-3"><a href="#tabs-1" class="tabulous_active" title=""><i class="fa fa-road fa-5x"></i></a></li>
+			<li class="col-md-3"><a href="#tabs-2" title=""><i class="fa fa-dollar fa-5x"></i></a></li>
+			<li class="col-md-3"><a href="#tabs-3" data-toggle="modal" data-target="#myModal" title=""><i class="fa fa-camera-retro fa-5x"></i></a></li>
 			<li class="col-md-3"><a href="#tabs-4" title=""><i class="fa fa-institution fa-5x"></i></a></li>
 		</ul>
 		<div id="tabs_container">
 			<div id="tabs-1" class="col-sm-4">
 				<section class="panel panel-default estimate">
 					<section class="panel-heading">
-						<h3 class="panel-title text-center uppercase">Request An Estimate</h3>
+						<h3 class="panel-title text-center uppercase">Request A Free Estimate</h3>
 					</section>
 					<section class="panel-body">
 						<p class="text-center">Call us at (703) 909-2104 for a free estimate</p>
@@ -34,21 +36,14 @@
 				</section>
 			</div>
 			<div id="tabs-2" class="col-sm-4">
-
 				<?php
 				      if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Kauffman Group Specials') ) : ?>
-
 				<?php endif; ?>
 			</div>
 			<div id="tabs-3" class="col-sm-4">
-				<h2>Heading</h2>
-				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-				<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+				<button type="button" id="FeaturedModal" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-lg text-center" style="display:block;margin:0 auto;">Featured Project</button>
 			</div>
 			<div id="tabs-4" class="col-sm-4">
-				<h2>Heading</h2>
-				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-				<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
 			</div>
 		</div><!--End tabs container--> 
 	</div><!--End tabs-->
@@ -91,6 +86,10 @@
 </html>
 
 <script>
+	var isEmpty = function(str){
+		return (!str || 0 === str.length);
+	};
+
 	$('#myModal').modal('hide');
 
 	jQuery('#tabs').tabulous({
@@ -103,6 +102,7 @@
 	 * over the parent level menu entry.
 	 * Many tanks to Hanzi for this idea and code!
 	 */
+
 	jQuery(document).ready(function($) {
 		$('ul.nav li.dropdown').on("click", function(){
 			window.location = $(this)[0].firstChild.href;
@@ -115,9 +115,20 @@
 		$('.specials-container').on("click", function(e){
 			window.location = 'contact-us?special=' + e.currentTarget.firstChild.children[0].innerText;
 		});
-		var specialText = $('#dom-target')[0].innerText;
-		console.log(specialText);
-		$('.wpcf7-textarea').val('I am interested in the special: "' + specialText.replace(/(\r\n|\n|\r)/gm,"").trim() + '"');
+		var specialText = $('#dom-target')[0];
+		if(specialText){
+			specialText = specialText.innerText;
+		}
+		if(!isEmpty(specialText)){		
+			$('.wpcf7-textarea').val('I am interested in the special: "' + specialText.replace(/(\r\n|\n|\r)/gm,"").trim() + '"');
+		}else{
+			$('.wpcf7-textarea').val('');
+		}
+		if($("#myModal").length === 0){
+			$('#FeaturedModal').attr("disabled", "disabled").text("No Featured Project Today");
+		}else{
+			$('#FeaturedModal').removeAttr("disabled").text($('.modal-title').text());
+		}
 	});
 
 </script>

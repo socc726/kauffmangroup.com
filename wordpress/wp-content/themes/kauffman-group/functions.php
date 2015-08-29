@@ -95,14 +95,14 @@ function custom_project() {
 		'name'                => _x( 'Projects', 'Post Type General Name', 'twentythirteen' ),
 		'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'twentythirteen' ),
 		'menu_name'           => __( 'Projects', 'twentythirteen' ),
-		'parent_item_colon'   => __( 'Parent Movie', 'twentythirteen' ),
-		'all_items'           => __( 'All Movies', 'twentythirteen' ),
-		'view_item'           => __( 'View Movie', 'twentythirteen' ),
-		'add_new_item'        => __( 'Add New Movie', 'twentythirteen' ),
+		'parent_item_colon'   => __( 'Parent Project', 'twentythirteen' ),
+		'all_items'           => __( 'All Projects', 'twentythirteen' ),
+		'view_item'           => __( 'View Project', 'twentythirteen' ),
+		'add_new_item'        => __( 'Add New Project', 'twentythirteen' ),
 		'add_new'             => __( 'Add New', 'twentythirteen' ),
-		'edit_item'           => __( 'Edit Movie', 'twentythirteen' ),
-		'update_item'         => __( 'Update Movie', 'twentythirteen' ),
-		'search_items'        => __( 'Search Movie', 'twentythirteen' ),
+		'edit_item'           => __( 'Edit Project', 'twentythirteen' ),
+		'update_item'         => __( 'Update Project', 'twentythirteen' ),
+		'search_items'        => __( 'Search Project', 'twentythirteen' ),
 		'not_found'           => __( 'Not Found', 'twentythirteen' ),
 		'not_found_in_trash'  => __( 'Not found in Trash', 'twentythirteen' ),
 	);
@@ -111,12 +111,10 @@ function custom_project() {
 	
 	$args = array(
 		'label'               => __( 'Projects', 'Project' ),
-		'description'         => __( 'Movie news and reviews', 'twentythirteen' ),
+		'description'         => __( 'Photos and descriptions of current projects.', 'twentythirteen' ),
 		'labels'              => $labels,
 		// Features this CPT supports in Post Editor
-		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', 'dfiFeatured'),
-		// You can associate this CPT with a taxonomy or custom taxonomy. 
-		'taxonomies'          => array( 'genres' ),
+		'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'revisions', 'dfiFeatured'),
 		/* A hierarchical CPT is like Pages and can have
 		* Parent and child items. A non-hierarchical CPT
 		* is like Posts.
@@ -308,7 +306,7 @@ class BootstrapNavMenuWalker extends Walker_Nav_Menu {
 	}
 }
 // Creating the widget 
-class wpb_widget extends WP_Widget {
+class kgi_special_widget extends WP_Widget {
 
 	function __construct() {
 
@@ -386,16 +384,140 @@ class wpb_widget extends WP_Widget {
 		return $instance;
 	}
 
-} // Class wpb_widget ends here
+} // Class kgi_special_widget ends here
 
+// Creating the widget 
+class kgi_featured_widget extends WP_Widget {
+
+	function __construct() {
+
+		parent::__construct(
+
+			// Base ID of your widget
+			'kgi_featured_widget', 
+
+			// Widget name will appear in UI
+			__('KGI Featured Project', 'kgi_featured_widget'), 
+
+			// Widget description
+			array( 'description' => __( 'Kauffman Group Featured Project', 'kgi_featured_widget' ), )
+
+		);
+	}
+
+	// Creating widget front-end
+	// This is where the action happens
+
+	public function widget( $args, $instance ) {
+
+		$pid = apply_filters( 'widget_pid', $instance['pid'] );
+		
+		$project = get_post($pid);
+
+		if(empty((array)$project) || empty($pid)){
+			return;
+		}
+
+		$title = $project->post_title; ?>
+
+		<!-- Build Modal -->
+		<section class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<section class="modal-dialog">
+		<section class="modal-content">
+		<section class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h4 class="modal-title" id="myModalLabel"><?php echo $title; ?></h4>
+		</section>
+		<section class="modal-body">
+		<section id="ProjectCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+		<li data-target="#ProjectCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#ProjectCarousel" data-slide-to="1"></li>
+		<li data-target="#ProjectCarousel" data-slide-to="2"></li>
+		</ol>
+		<!-- Wrapper for slides -->
+		<section class="carousel-inner" role="listbox">
+		<!-- Get Featured Images -->
+		<?php if( class_exists('Dynamic_Featured_Image') ) {
+
+			global $dynamic_featured_image;
+
+			$count = 0;
+
+			$featured_images = $dynamic_featured_image->get_all_featured_images( $pid);
+
+			foreach($featured_images as $value) :?>
+				<?php if($count == 0) { ?>
+					<section class="item active">
+				<?php } else { ?>
+					<section class="item">
+				<?php } ?>
+						<img src="<?php echo $value['full']; ?>" alt="">
+						<section class="carousel-caption">
+							<h3><?php echo $dynamic_featured_image->get_image_title( $value['full']);  ?></h3>
+							<span><?php echo $dynamic_featured_image->get_image_caption( $value['full']);  ?></span>
+							<p>
+							<?php echo $dynamic_featured_image->get_image_description( $value['full']);  ?>
+							</p>
+						</section>
+					</section>
+			<?php $count++; endforeach; ?>
+		<?php } ?>
+		</section>
+		<!-- Controls -->
+		<a class="left carousel-control" href="#ProjectCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a>
+		<a class="right carousel-control" href="#ProjectCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>
+		</section>
+		</section>
+		<section class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</section>
+		</section>
+		</section>
+		</section>
+
+		<?php 
+	}
+			
+	// Widget Backend 
+	public function form( $instance ) {
+
+		if ( isset( $instance[ 'pid' ] ) ) {
+
+			$pid = $instance[ 'pid' ];
+
+		}else{
+			$pid = __( 'Add project ID', 'kgi_featured_widget' );
+		}
+
+		// Widget admin form
+		?>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'pid' ); ?>"><?php _e( 'Project ID:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'pid' ); ?>" name="<?php echo $this->get_field_name( 'pid' ); ?>" type="text" value="<?php echo esc_attr( $pid ); ?>" />
+		</p>
+
+	<?php }
+	
+	// Updating widget replacing old instances with new
+	public function update( $new_instance, $old_instance ) {
+
+		$instance = array();
+
+		$instance['pid'] = ( ! empty( $new_instance['pid'] ) ) ? strip_tags( $new_instance['pid'] ) : '';
+		return $instance;
+	}
+
+} // Class kgi_featured_widget ends here
 // Register and load the widget
-function wpb_load_widget() {
+function load_widgets() {
 
-	register_widget( 'wpb_widget' );
-
+	register_widget( 'kgi_special_widget' );
+	register_widget( 'kgi_featured_widget' );
 }
 
-add_action( 'widgets_init', 'wpb_load_widget' );
+add_action( 'widgets_init', 'load_widgets' );
 
 // Custom widget area - Specials.
 register_sidebar( array(
@@ -409,3 +531,31 @@ register_sidebar( array(
 	'before_desc' => '<p>',
 	'after_desc' => '</p><i class="fa fa-money fa-5x"></i></section>',
 ) );
+
+// Custom widget area - Featured Project.
+register_sidebar( array(
+	'name' => __( 'Kauffman Group Featured Project'),
+	'id' => 'custom-featured-area',
+	'description' => __( 'Add a project you want to feature here', 'kauffman-group' )
+) );
+
+// adds post/page id to admin edit
+
+function cf_post_id() {
+    global $post;
+
+   // Get the data
+   $id = $post->ID;
+
+   // Echo out the field
+   echo '<input type="text" name="_id" value="' . $id . '" class="widefat" disabled />';
+  }
+
+ function ve_custom_meta_boxes() {
+    add_meta_box('projects_refid', 'Post ID', 'cf_post_id', 'post', 'side', 'high');
+    add_meta_box('projects_refid', 'Page ID', 'cf_post_id', 'page', 'side', 'high');
+     add_meta_box('projects_refid', 'Page ID', 'cf_post_id', 'projects', 'side', 'high');
+   }
+   add_action('add_meta_boxes', 've_custom_meta_boxes');
+
+?>

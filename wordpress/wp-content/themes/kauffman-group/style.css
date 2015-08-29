@@ -711,6 +711,12 @@ a:hover, a:active {
   align-items: center;
 }
 
+/* line 32, public/sass/site/secondary/_widgets.sass */
+.modal-open .modal {
+  top: 100px;
+  z-index: 1000000000000;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
