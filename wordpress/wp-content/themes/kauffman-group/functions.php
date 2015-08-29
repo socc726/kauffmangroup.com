@@ -565,4 +565,32 @@ function your_custom_form_class_attr( $class ) {
 	return $class;
 }
 
+// Add Shortcode
+function contact_shortcode( $atts , $content = null ) {
+
+	// Attributes
+	extract( shortcode_atts(
+		array(
+			'name' => '',
+			'phone' => '',
+			'role' => '',
+			'photo' => '',
+			'email' => '',
+		), $atts )
+	);
+
+	// Code
+
+	$output = '<div class="list"><div class="inner"><div class="li-img"><img src="' . $photo . '"></div><div class="li-text">';
+
+	$output .= '<h4 class="li-head">' . $name . ' ( ' . $role . ' ) ' . '</h4>';
+
+	$output .= '<p class="li-sub"><a href="tel:' . $phone . '">' . $phone . '</a></p>';
+
+	$output .= '<p class="li-sub"><a href="mailto:'. $email .'" class="li-sub">' . $email . '</a></p></div></div></div>';
+
+	return $output;
+
+}
+add_shortcode( 'contact', 'contact_shortcode' );
 ?>

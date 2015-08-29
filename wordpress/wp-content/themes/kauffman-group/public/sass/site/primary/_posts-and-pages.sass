@@ -6,6 +6,8 @@
 	.jumbotron
 		background: #fff
 		padding: 60px 0
+		p
+			clear: both
 		.container
 			.page-header
 				h2
@@ -22,3 +24,42 @@
 			margin: 0 auto
 			left: 0
 			right: 0
+
+	.list
+		display: table
+		border-collapse: collapse
+		width: 50%
+		float: left
+		margin-bottom: 20px
+
+		.inner
+			display: table-row
+			overflow: hidden
+
+			.li-img
+				display: table-cell
+				vertical-align: middle
+				width: 15%
+				padding-right: 1em
+				img
+					display: block
+					width: 100%
+					height: auto
+					float: right
+
+			.li-text
+				display: table-cell
+				vertical-align: middle
+				width: 70%
+
+				.li-head, .li-sub
+					margin: 0
+
+	@media all and (min-width: 45em)
+		.list li
+			float: left
+			width: 50%
+
+	@media all and (min-width: 75em)
+		.list li
+			width: 33.33333%
